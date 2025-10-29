@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixCalculator.Lib", "MatrixCalculator.Lib\MatrixCalculator.Lib.csproj", "{61606DB2-C034-4E39-B145-B9DD3876A5F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VectorCalculator.Lib", "VectorCalculator.Lib\VectorCalculator.Lib.csproj", "{61606DB2-C034-4E39-B145-B9DD3876A5F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixCalculator.Tests", "MatrixCalculator.Tests\MatrixCalculator.Tests.csproj", "{65D40A92-1C1C-4061-9C82-A5ECC737D310}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VectorCalculator.Tests", "VectorCalculator.Tests\VectorCalculator.Tests.csproj", "{65D40A92-1C1C-4061-9C82-A5ECC737D310}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
