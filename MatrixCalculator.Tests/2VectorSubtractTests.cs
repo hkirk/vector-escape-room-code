@@ -27,7 +27,7 @@ public class VectorSubtractTests
         var testMethodsNames = Engine.TestMethodsNames(thisType);
         var happyPathTested = Engine.HappyPathTested(testMethodsNames, "subtract_twovector");
         var edgeCaseTested = Engine.EdgeCaseTested(testMethodsNames, "differentsizes");
-        var allTestsHaveAssertions = Engine.CheckMethodsForAsserts(thisType);
+        var allTestsHaveAssertions = Engine.CheckMethodsForAsserts(thisType, 2);
         var file2 = File.ReadAllText("Data/File2");
 
         if (happyPathTested && edgeCaseTested && allTestsPasses && allTestsHaveAssertions)
@@ -57,14 +57,12 @@ To unlock the next challenge, you must write:";
             }
             if (!allTestsHaveAssertions)
             {
-                errorMessage += @"
-- Ensure ALL your test methods include at least one assertion Assert.That.
+                errorMessage += @"- Ensure ALL your test methods include at least one assertion Assert.That.
 ";
             }
             if (!allTestsPasses)
             {
-                errorMessage += @"
-- Ensure ALL your test methods pass.
+                errorMessage += @"- Ensure ALL your test methods pass.
 ";
             }
             Console.WriteLine(errorMessage);

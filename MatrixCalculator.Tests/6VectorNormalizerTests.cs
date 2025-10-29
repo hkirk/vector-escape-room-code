@@ -28,7 +28,7 @@ public class VectorNormalizerTests
         var testMethodsNames = Engine.TestMethodsNames(thisType);
         var happyPathTested = Engine.HappyPathTested(testMethodsNames, "normalize_nonzero");
         var edgeCaseTested = Engine.EdgeCaseTested(testMethodsNames, "normalize_zero");
-        var allTestsHaveAssertions = Engine.CheckMethodsForAsserts(thisType);
+        var allTestsHaveAssertions = Engine.CheckMethodsForAsserts(thisType, 6);
         var file6 = File.ReadAllText("Data/File6");
 
         if (happyPathTested && edgeCaseTested && allTestsPasses && allTestsHaveAssertions)
@@ -39,7 +39,7 @@ ___  _   _ _____ _____ _   _  ____
 / /_\ \  \| | | |   | | | | | | |
 |  _  | . ` | | |   | | | |_| | |___
 |_| |_|_|\_| |_|   |_|  \___/ \____|
-All required tests passed! Your passkey??: {file6}-.........-........., maybe you need to look else were for the rest of the passcode
+All required tests passed! Your passkey??: {file6}, maybe you need to look else were for the rest of the passcode
             ");
         }
         else
@@ -53,19 +53,16 @@ To unlock the next challenge, you must write:";
 - Write a test for the HAPPY PATH (e.g., normalizing a non-zero vector).
   Example name: Normalize_NonZeroVector_ReturnsUnitVector
 - Write a test for an EDGE CASE (e.g., attempting to normalize a zero vector).
-  Example name: Normalize_ZeroVector_ThrowsException
-";
+  Example name: Normalize_ZeroVector_ThrowsException";
             }
             if (!allTestsHaveAssertions)
             {
-                errorMessage += @"
-- Ensure ALL your test methods include at least one assertion Assert.That.
+                errorMessage += @"- Ensure ALL your test methods include at least one assertion Assert.That.
 ";
             }
             if (!allTestsPasses)
             {
-                errorMessage += @"
-- Ensure ALL your test methods pass.
+                errorMessage += @"- Ensure ALL your test methods pass.
 ";
             }
             Console.WriteLine(errorMessage);

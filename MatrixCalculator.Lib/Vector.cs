@@ -2,5 +2,6 @@
 
 public class Vector
 {
+    public double[] Components { get; set; }
 
 }

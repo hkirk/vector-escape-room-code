@@ -29,7 +29,7 @@ public class VectorCrossProductTests
         var testMethodsNames = Engine.TestMethodsNames(thisType);
         var happyPathTested = Engine.HappyPathTested(testMethodsNames, "cross_3d");
         var edgeCaseTested = Engine.EdgeCaseTested(testMethodsNames, "cross_non3d");
-        var allTestsHaveAssertions = Engine.CheckMethodsForAsserts(thisType);
+        var allTestsHaveAssertions = Engine.CheckMethodsForAsserts(thisType, 7);
 
         // Count the total number of tests in the entire project
         var assembly = Assembly.GetExecutingAssembly();
@@ -68,14 +68,12 @@ To unlock the final challenge, you must write:";
             }
             if (!allTestsHaveAssertions)
             {
-                errorMessage += @"
-- Ensure ALL your test methods include at least one assertion Assert.That.
+                errorMessage += @"- Ensure ALL your test methods include at least one assertion Assert.That.
 ";
             }
             if (!allTestsPasses)
             {
-                errorMessage += @"
-- Ensure ALL your test methods pass.
+                errorMessage += @"- Ensure ALL your test methods pass.
 ";
             }
             Console.WriteLine(errorMessage);

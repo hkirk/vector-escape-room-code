@@ -5,9 +5,9 @@ namespace MatrixCalculator.Tests;
 
 internal class Engine
 {
-    internal static bool CheckMethodsForAsserts(Type thisType)
+    internal static bool CheckMethodsForAsserts(Type thisType, int num)
     {
-        var syntaxTree = CSharpSyntaxTree.ParseText(File.ReadAllText($"../../../{thisType.Name}.cs"));
+        var syntaxTree = CSharpSyntaxTree.ParseText(File.ReadAllText($"../../../{num}{thisType.Name}.cs"));
         var root = syntaxTree.GetRoot();
         var classDeclaration = root.DescendantNodes().OfType<ClassDeclarationSyntax>().FirstOrDefault(c => c.Identifier.Text == thisType.Name);
 

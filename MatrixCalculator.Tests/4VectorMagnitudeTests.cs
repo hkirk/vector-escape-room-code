@@ -28,7 +28,7 @@ public class VectorMagnitudeTests
         var testMethodsNames = Engine.TestMethodsNames(thisType);
         var happyPathTested = Engine.HappyPathTested(testMethodsNames, "magnitude_nonzero");
         var edgeCaseTested = Engine.EdgeCaseTested(testMethodsNames, "magnitude_zero");
-        var allTestsHaveAssertions = Engine.CheckMethodsForAsserts(thisType);
+        var allTestsHaveAssertions = Engine.CheckMethodsForAsserts(thisType, 4);
         var file4 = File.ReadAllText("Data/File4");
 
         if (happyPathTested && edgeCaseTested && allTestsPasses && allTestsHaveAssertions)
@@ -39,7 +39,7 @@ ___  _   _ _____ _____ _   _  ____
 / /_\ \  \| | | |   | | | | | | |
 |  _  | . ` | | |   | | | |_| | |___
 |_| |_|_|\_| |_|   |_|  \___/ \____|
-All required tests passed! Your passkey??: {file4}-.......-........., maybe you need to look else were for the rest of the passcode
+All required tests passed! Your passkey??: {file4}, maybe you need to look else were for the rest of the passcode
             ");
         }
         else
@@ -58,14 +58,12 @@ To unlock the next challenge, you must write:";
             }
             if (!allTestsHaveAssertions)
             {
-                errorMessage += @"
-- Ensure ALL your test methods include at least one assertion Assert.That.
+                errorMessage += @"- Ensure ALL your test methods include at least one assertion Assert.That.
 ";
             }
             if (!allTestsPasses)
             {
-                errorMessage += @"
-- Ensure ALL your test methods pass.
+                errorMessage += @"- Ensure ALL your test methods pass.
 ";
             }
             Console.WriteLine(errorMessage);

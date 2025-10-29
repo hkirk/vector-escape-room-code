@@ -30,7 +30,7 @@ public class VectorAddTests
         var happyPathTested = Engine.HappyPathTested(testMethodsNames, "add_twovector");
         var edgeCaseTested = Engine.EdgeCaseTested(testMethodsNames, "differentsizes");
 
-        var allTestsHaveAssertions = Engine.CheckMethodsForAsserts(thisType);
+        var allTestsHaveAssertions = Engine.CheckMethodsForAsserts(thisType, 1);
 
         var file1 = File.ReadAllText("Data/File1");
         if (happyPathTested && edgeCaseTested && allTestsPasses && allTestsHaveAssertions)
@@ -60,15 +60,13 @@ To unlock the next challenge, you must write:";
             }
             if (!allTestsHaveAssertions)
             {
-                errorMessage += @"
-- Ensure ALL your test methods include at least one assertion Assert.That.
+                errorMessage += @"- Ensure ALL your test methods include at least one assertion Assert.That.
 ";
             }
 
             if (!allTestsPasses)
             {
-                errorMessage += @"
-- Ensure ALL your test methods passes.
+                errorMessage += @"- Ensure ALL your test methods passes.
 ";
             }
             Console.WriteLine(errorMessage);

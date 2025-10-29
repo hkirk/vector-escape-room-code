@@ -11,7 +11,7 @@ public class VectorScaleTests
     // 2. An edge case test (e.g., scaling by zero or a negative scalar).
 
     [Test]
-    public void Scale_VectorByScalar_ReturnCorrectVector()
+    public void Scale_PositiveScalarScalar_ReturnCorrectVector()
     {
         Assert.That(true, Is.EqualTo(false));
     }
@@ -27,7 +27,7 @@ public class VectorScaleTests
         var testMethodsNames = Engine.TestMethodsNames(thisType);
         var happyPathTested = Engine.HappyPathTested(testMethodsNames, "scale_positivescalar");
         var edgeCaseTested = Engine.EdgeCaseTested(testMethodsNames, "scale_zeroscalar");
-        var allTestsHaveAssertions = Engine.CheckMethodsForAsserts(thisType);
+        var allTestsHaveAssertions = Engine.CheckMethodsForAsserts(thisType, 3);
         var file3 = File.ReadAllText("Data/File3");
 
         if (happyPathTested && edgeCaseTested && allTestsPasses && allTestsHaveAssertions)
@@ -57,14 +57,12 @@ To unlock the next challenge, you must write:";
             }
             if (!allTestsHaveAssertions)
             {
-                errorMessage += @"
-- Ensure ALL your test methods include at least one assertion Assert.That.
+                errorMessage += @"- Ensure ALL your test methods include at least one assertion Assert.That.
 ";
             }
             if (!allTestsPasses)
             {
-                errorMessage += @"
-- Ensure ALL your test methods pass.
+                errorMessage += @"- Ensure ALL your test methods pass.
 ";
             }
             Console.WriteLine(errorMessage);
