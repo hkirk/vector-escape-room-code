@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixCalculator.Lib", "MatrixCalculator.Lib\MatrixCalculator.Lib.csproj", "{61606DB2-C034-4E39-B145-B9DD3876A5F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixCalculator.Tests", "MatrixCalculator.Tests\MatrixCalculator.Tests.csproj", "{65D40A92-1C1C-4061-9C82-A5ECC737D310}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61606DB2-C034-4E39-B145-B9DD3876A5F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61606DB2-C034-4E39-B145-B9DD3876A5F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61606DB2-C034-4E39-B145-B9DD3876A5F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61606DB2-C034-4E39-B145-B9DD3876A5F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65D40A92-1C1C-4061-9C82-A5ECC737D310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65D40A92-1C1C-4061-9C82-A5ECC737D310}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65D40A92-1C1C-4061-9C82-A5ECC737D310}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65D40A92-1C1C-4061-9C82-A5ECC737D310}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
