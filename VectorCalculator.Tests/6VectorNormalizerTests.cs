@@ -29,17 +29,17 @@ public class VectorNormalizerTests
         var happyPathTested = Engine.HappyPathTested(testMethodsNames, "normalize_nonzero");
         var edgeCaseTested = Engine.EdgeCaseTested(testMethodsNames, "normalize_zero");
         var allTestsHaveAssertions = Engine.CheckMethodsForAsserts(thisType, 6);
-        var file6 = File.ReadAllText("Data/File6");
+        var str = File.ReadAllText("Data/File6");
 
         if (happyPathTested && edgeCaseTested && allTestsPasses && allTestsHaveAssertions)
         {
-            Console.WriteLine($@"
+            TestContext.Error.WriteLine($@"
 ___  _   _ _____ _____ _   _  ____
 / _ \| \ | |_   _|_   _| | | |/ ___|
 / /_\ \  \| | | |   | | | | | | |
 |  _  | . ` | | |   | | | |_| | |___
 |_| |_|_|\_| |_|   |_|  \___/ \____|
-All required tests passed! Your passkey??: {file6}, maybe you need to look else were for the rest of the passcode
+All required tests passed! Your passkey??: {str}, maybe you need to look else were for the rest of the passcode
             ");
         }
         else
@@ -65,7 +65,7 @@ To unlock the next challenge, you must write:";
                 errorMessage += @"- Ensure ALL your test methods pass.
 ";
             }
-            Console.WriteLine(errorMessage);
+            TestContext.Error.WriteLine(errorMessage);
         }
     }
 }

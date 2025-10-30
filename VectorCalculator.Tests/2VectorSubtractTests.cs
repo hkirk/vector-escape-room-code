@@ -29,17 +29,17 @@ public class VectorSubtractTests
         var happyPathTested = Engine.HappyPathTested(testMethodsNames, "subtract_twovector");
         var edgeCaseTested = Engine.EdgeCaseTested(testMethodsNames, "differentsizes");
         var allTestsHaveAssertions = Engine.CheckMethodsForAsserts(thisType, 2);
-        var file2 = File.ReadAllText("Data/File2");
+        var str = File.ReadAllText("Data/File2");
 
         if (happyPathTested && edgeCaseTested && allTestsPasses && allTestsHaveAssertions)
         {
-            Console.WriteLine($@"
+            TestContext.Error.WriteLine($@"
 ___  _   _ _____ _____ _   _  ____
 / _ \| \ | |_   _|_   _| | | |/ ___|
 / /_\ \  \| | | |   | | | | | | |
 |  _  | . ` | | |   | | | |_| | |___
 |_| |_|_|\_| |_|   |_|  \___/ \____|
-All required tests passed! Your passkey: {file2}
+All required tests passed! Your passkey: {str}
             ");
         }
         else
@@ -66,7 +66,7 @@ To unlock the next challenge, you must write:";
                 errorMessage += @"- Ensure ALL your test methods pass.
 ";
             }
-            Console.WriteLine(errorMessage);
+            TestContext.Error.WriteLine(errorMessage);
         }
     }
 }

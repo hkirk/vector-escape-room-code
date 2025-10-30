@@ -42,7 +42,7 @@ public class VectorCrossProductTests
 
         if (happyPathTested && edgeCaseTested && allTestsPasses && allTestsHaveAssertions)
         {
-            Console.WriteLine($@"
+            TestContext.Error.WriteLine($@"
 ___  _   _ _____ _____ _   _  ____
 / _ \| \ | |_   _|_   _| | | |/ ___|
 / /_\ \  \| | | |   | | | | | | |
@@ -77,7 +77,7 @@ To unlock the final challenge, you must write:";
                 errorMessage += @"- Ensure ALL your test methods pass.
 ";
             }
-            Console.WriteLine(errorMessage);
+            TestContext.Error.WriteLine(errorMessage);
         }
     }
 }

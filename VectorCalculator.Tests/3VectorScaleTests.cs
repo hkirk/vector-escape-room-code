@@ -29,17 +29,17 @@ public class VectorScaleTests
         var happyPathTested = Engine.HappyPathTested(testMethodsNames, "scale_positivescalar");
         var edgeCaseTested = Engine.EdgeCaseTested(testMethodsNames, "scale_zeroscalar");
         var allTestsHaveAssertions = Engine.CheckMethodsForAsserts(thisType, 3);
-        var file3 = File.ReadAllText("Data/File3");
+        var str = File.ReadAllText("Data/File3");
 
         if (happyPathTested && edgeCaseTested && allTestsPasses && allTestsHaveAssertions)
         {
-            Console.WriteLine($@"
+            TestContext.Error.WriteLine($@"
 ___  _   _ _____ _____ _   _  ____
 / _ \| \ | |_   _|_   _| | | |/ ___|
 / /_\ \  \| | | |   | | | | | | |
 |  _  | . ` | | |   | | | |_| | |___
 |_| |_|_|\_| |_|   |_|  \___/ \____|
-All required tests passed! Your passkey: {file3}
+All required tests passed! Your passkey: {str}
             ");
         }
         else
@@ -66,7 +66,7 @@ To unlock the next challenge, you must write:";
                 errorMessage += @"- Ensure ALL your test methods pass.
 ";
             }
-            Console.WriteLine(errorMessage);
+            TestContext.Error.WriteLine(errorMessage);
         }
     }
 }

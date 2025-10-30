@@ -43,16 +43,16 @@ public class VectorAddTests
 
         var allTestsHaveAssertions = Engine.CheckMethodsForAsserts(thisType, 1);
 
-        var file1 = File.ReadAllText("Data/File1");
+        var str = File.ReadAllText("Data/File1");
         if (happyPathTested && edgeCaseTested && allTestsPasses && allTestsHaveAssertions)
         {
-            Console.WriteLine($@"
+            TestContext.Error.WriteLine($@"
 ___  _   _ _____ _____ _   _  ____
 / _ \| \ | |_   _|_   _| | | |/ ___|
 / /_\ \  \| | | |   | | | | | | |
 |  _  | . ` | | |   | | | |_| | |___
 |_| |_|_|\_| |_|   |_|  \___/ \____|
-All required tests passed! Your passkey: {file1}
+All required tests passed! Your passkey: {str}
             ");
         }
         else
@@ -80,7 +80,7 @@ To unlock the next challenge, you must write:";
                 errorMessage += @"- Ensure ALL your test methods passes.
 ";
             }
-            Console.WriteLine(errorMessage);
+            TestContext.Error.WriteLine(errorMessage);
         }
     }
 

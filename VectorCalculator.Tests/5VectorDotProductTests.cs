@@ -29,17 +29,17 @@ public class VectorDotProductTests
         var happyPathTested = Engine.HappyPathTested(testMethodsNames, "dot_nonzero");
         var edgeCaseTested = Engine.EdgeCaseTested(testMethodsNames, "dot_orthogonal");
         var allTestsHaveAssertions = Engine.CheckMethodsForAsserts(thisType, 5);
-        var file5 = File.ReadAllText("Data/File5");
+        var str = File.ReadAllText("Data/File5");
 
         if (happyPathTested && edgeCaseTested && allTestsPasses && allTestsHaveAssertions)
         {
-            Console.WriteLine($@"
+            TestContext.Error.WriteLine($@"
 ___  _   _ _____ _____ _   _  ____
 / _ \| \ | |_   _|_   _| | | |/ ___|
 / /_\ \  \| | | |   | | | | | | |
 |  _  | . ` | | |   | | | |_| | |___
 |_| |_|_|\_| |_|   |_|  \___/ \____|
-All required tests passed! Your passkey??: {file5}, maybe you need to look else were for the rest of the passcode
+All required tests passed! Your passkey??: {str}, maybe you need to look else were for the rest of the passcode
             ");
         }
         else
@@ -66,7 +66,7 @@ To unlock the next challenge, you must write:";
                 errorMessage += @"- Ensure ALL your test methods pass.
 ";
             }
-            Console.WriteLine(errorMessage);
+            TestContext.Error.WriteLine(errorMessage);
         }
     }
 }
