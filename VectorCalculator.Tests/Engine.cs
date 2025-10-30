@@ -1,7 +1,8 @@
+namespace VectorCalculator.Tests;
+
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace MatrixCalculator.Tests;
 
 internal class Engine
 {

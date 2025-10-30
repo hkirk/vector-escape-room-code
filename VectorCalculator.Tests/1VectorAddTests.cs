@@ -1,11 +1,15 @@
-namespace MatrixCalculator.Tests;
+namespace VectorCalculator.Tests;
 
 using NUnit.Framework;
 using System;
+using VectorCalculator.Lib;
 
 [TestFixture]
 public class VectorAddTests
 {
+    private Vector _uut;
+        
+    
     // Write your own tests here.
     // The passkey will only be revealed if they cover:
     // 1. A happy path test (e.g., adding two valid vectors).
@@ -14,6 +18,13 @@ public class VectorAddTests
     public void Add_TwoVectors_ReturnCorrectVector()
     {
         Assert.That(true, Is.EqualTo(false));
+    }
+
+    [Test]
+    public void Add_TwoVectors_DifferentSizes()
+    {
+        Vector v1 = null;
+        Assert.That(() => _uut.Add(v1), Throws.TypeOf<ArgumentException>());
     }
     
     /*********** Ignore this below, this is here for the game ***************/

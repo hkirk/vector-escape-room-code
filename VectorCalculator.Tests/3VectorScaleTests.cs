@@ -1,4 +1,5 @@
-namespace MatrixCalculator.Tests;
+namespace VectorCalculator.Tests;
+
 using NUnit.Framework;
 using System;
 
