@@ -44,4 +44,8 @@
       </None>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\VectorCalculator.Lib\VectorCalculator.Lib.csproj" />
+    </ItemGroup>
+
 </Project>

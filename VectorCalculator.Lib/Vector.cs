@@ -1,4 +1,4 @@
-﻿namespace MatrixCalculator.Lib;
+﻿namespace VectorCalculator.Lib;
 
 public class Vector
 {
